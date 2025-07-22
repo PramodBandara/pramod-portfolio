@@ -11,7 +11,7 @@ function Header() {
 
   const containerStyle = {
     backgroundImage: `url(${import.meta.env.BASE_URL}mars.png)`,
-    backgroundSize: 'cover',
+    backgroundSize: window.innerWidth <= 768 ? 'contain' : 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundAttachment: 'fixed',

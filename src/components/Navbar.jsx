@@ -28,12 +28,15 @@ function Navbar() {
     @media (max-width: 768px) {
       .audiowide-regular {
         font-size: 48px !important;
+        text-align: center;
       }
       nav {
+        flex-direction: column !important;
+        gap: 10px;
         padding: 10px !important;
       }
       .github-icon {
-        font-size: 24px !important;
+        font-size: 28px !important;
       }
     }
   `;
@@ -47,7 +50,10 @@ function Navbar() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        position: "relative"
+        position: "relative",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        gap: "20px",
       }}>
         <div style={{ fontSize: "100px" }} className="audiowide-regular">
           {"Pramod Bandara".split("").map((char, index) => (
