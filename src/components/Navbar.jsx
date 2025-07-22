@@ -56,7 +56,7 @@ function Navbar() {
         gap: "20px",
       }}>
         <div style={{ fontSize: "100px" }} className="audiowide-regular">
-          {"Pramod Bandara".split("").map((char, index) => (
+          {"Pramod Bandar".split("").map((char, index) => (
             <span key={index} className="letter" style={{ animationDelay: `${index * 0.05}s` }}>
               {char}
             </span>
