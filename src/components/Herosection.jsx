@@ -9,15 +9,12 @@ function Header() {
 
   const [isProjectActive, setIsProjectActive] = useState(false);
 
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
   const containerStyle = {
     backgroundImage: `url(${import.meta.env.BASE_URL}mars.png)`,
-    backgroundSize: isMobile ? 'contain' : 'cover',
+    backgroundSize: window.innerWidth <= 768 ? 'contain' : 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundAttachment: isMobile ? 'scroll' : 'fixed',
-    minHeight: '100vh',
-    width: '100%',
+    backgroundAttachment: 'fixed',
     color: '#fff'
   };
 
