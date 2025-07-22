@@ -12,12 +12,14 @@ function Header() {
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
   const containerStyle = {
     backgroundImage: `url(${import.meta.env.BASE_URL}mars.png)`,
-    backgroundSize: isMobile ? 'contain' : 'cover',
+    backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundAttachment: isMobile ? 'scroll' : 'fixed',
+    backgroundAttachment: 'fixed',
     minHeight: '100vh',
     width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
     color: '#fff'
   };
 
