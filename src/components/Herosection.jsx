@@ -10,12 +10,19 @@ function Header() {
   const [isProjectActive, setIsProjectActive] = useState(false);
 
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
-  const containerStyle = {
+  const backgroundLayerStyle = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100vh',
     backgroundImage: `url(${import.meta.env.BASE_URL}${isMobile ? 'mars-mobile.png' : 'mars.png'})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
+    zIndex: -1
+  };
+  const containerStyle = {
     minHeight: '100vh',
     width: '100%',
     display: 'flex',
@@ -148,6 +155,7 @@ function Header() {
 
   return (
     <div className="alumni-sans-pinstripe-regular">
+      <div style={backgroundLayerStyle}></div>
       <div style={containerStyle}>
         <section>
           <div ref={aboutRef} style={sectionStyle}>
