@@ -9,28 +9,26 @@ function Header() {
 
   const [isProjectActive, setIsProjectActive] = useState(false);
 
-  const NAVBAR_HEIGHT = 60;
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
   const containerStyle = {
     backgroundImage: `url(${import.meta.env.BASE_URL}${isMobile ? 'mars-mobile.png' : 'mars.png'})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'top center',
+    backgroundPosition: 'center',
     backgroundAttachment: 'fixed',
-    minHeight: `calc(100vh - ${NAVBAR_HEIGHT}px)`,
+    minHeight: '100vh',
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    color: '#fff',
-    paddingTop: NAVBAR_HEIGHT,
+    color: '#fff'
   };
 
   const sectionStyle = {
-    height: '100%',
-    padding: '40px 40px 0 40px',
+    height: '100vh',
+    padding: '40px',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
     color: '#fff',
