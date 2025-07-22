@@ -10,6 +10,12 @@ function Header() {
   const [isProjectActive, setIsProjectActive] = useState(false);
 
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+  const baseFontSize = isMobile ? '6vw' : '10vw';
+  const secondaryFontSize = isMobile ? '3vw' : '5vw';
+  const iconHeight = isMobile ? '4vw' : '6vw';
+  const iconMarginRight = '1vw';
+
   const containerStyle = {
     backgroundImage: `url(${import.meta.env.BASE_URL}${isMobile ? 'mars-mobile.png' : 'mars.png'})`,
     backgroundSize: 'cover',
@@ -20,12 +26,13 @@ function Header() {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    color: '#fff'
+    color: '#fff',
+    padding: isMobile ? '20px' : '40px',
   };
 
   const sectionStyle = {
     height: '100vh',
-    padding: '40px',
+    padding: isMobile ? '20px' : '40px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -34,7 +41,7 @@ function Header() {
     color: '#fff',
     fontWeight: 'thin',
     fontFamily: 'Alumni Sans Pinstripe, sans-serif',
-    gap: '40px'
+    gap: isMobile ? '20px' : '40px'
   };
 
   const aboutRef = useRef();
@@ -151,53 +158,53 @@ function Header() {
       <div style={containerStyle}>
         <section>
           <div ref={aboutRef} style={sectionStyle}>
-            <h1 style={{ color: '#ffffff', fontSize: window.innerWidth <= 768 ? '80px' : '200px' }}>About Me</h1>
-            <p style={{ fontSize: window.innerWidth <= 768 ? '32px' : '80px' }}>I love coding, design, and building web apps with Laravel and React.</p>
+            <h1 style={{ color: '#ffffff', fontSize: baseFontSize, margin: 0 }}>About Me</h1>
+            <p style={{ fontSize: secondaryFontSize, margin: 0 }}>I love coding, design, and building web apps with Laravel and React.</p>
           </div>
         </section>
 
         <section>
           <div ref={projectsRef} style={sectionStyle}>
-            <h2 style={{ color: '#ffffff', fontSize: window.innerWidth <= 768 ? '80px' : '200px' }}>My Projects</h2>
+            <h2 style={{ color: '#ffffff', fontSize: baseFontSize, margin: 0 }}>My Projects</h2>
             <ul style={{ listStyleType: 'none', padding: 0 }}>
-              <li style={{ fontSize: window.innerWidth <= 768 ? '32px' : '80px' }}>
-                <img src="shopify.png" alt="Shopify Logo" style={{ height: window.innerWidth <= 768 ? '30px' : '70px', marginRight: '20px', verticalAlign: 'middle' }} />
+              <li style={{ fontSize: secondaryFontSize, margin: 0 }}>
+                <img src="shopify.png" alt="Shopify Logo" style={{ height: iconHeight, marginRight: iconMarginRight, verticalAlign: 'middle', maxWidth: '100%' }} />
                 MySQL
-               using  E-Commerce App \ Create a custom web application with ( <img src="react.svg" alt="React Logo" style={{ height: window.innerWidth <= 768 ? '30px' : '60px', marginRight: '20px', verticalAlign: 'middle' }} /> + <img src="Laravel.svg" alt="Laravel Logo" style={{ height: window.innerWidth <= 768 ? '30px' : '60px', marginRight: '20px', verticalAlign: 'middle' }} /> + )
+               using  E-Commerce App \ Create a custom web application with ( <img src="react.svg" alt="React Logo" style={{ height: iconHeight, marginRight: iconMarginRight, verticalAlign: 'middle', maxWidth: '100%' }} /> + <img src="Laravel.svg" alt="Laravel Logo" style={{ height: iconHeight, marginRight: iconMarginRight, verticalAlign: 'middle', maxWidth: '100%' }} /> + )
               </li>
-              <li style={{ fontSize: window.innerWidth <= 768 ? '32px' : '80px' }}>
-                <img src="chatbot.gif" alt="Chatbot" style={{ height: window.innerWidth <= 768 ? '30px' : '70px', marginRight: '20px', verticalAlign: 'middle' }} />
+              <li style={{ fontSize: secondaryFontSize, margin: 0 }}>
+                <img src="chatbot.gif" alt="Chatbot" style={{ height: iconHeight, marginRight: iconMarginRight, verticalAlign: 'middle', maxWidth: '100%' }} />
                 Chatbot (React + AI)
               </li>
              
-              <li style={{ fontSize: window.innerWidth <= 768 ? '32px' : '80px' }}>Flashbats.shop</li>
-              <li style={{ fontSize: window.innerWidth <= 768 ? '32px' : '80px' }}>stacklyne</li>
+              <li style={{ fontSize: secondaryFontSize, margin: 0 }}>Flashbats.shop</li>
+              <li style={{ fontSize: secondaryFontSize, margin: 0 }}>stacklyne</li>
             </ul>
           </div>
         </section>
 
         <section>
-          <div ref={skillsRef} style={{ ...sectionStyle, marginTop: '500px', marginBottom: '400px' }}>
-            <h2 style={{ color: '#ffffff', fontSize: window.innerWidth <= 768 ? '64px' : '160px' }}>Skills</h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: window.innerWidth <= 768 ? '16px' : '40px', flexWrap: 'wrap' }}>
-              <p style={{ fontSize: window.innerWidth <= 768 ? '32px' : '80px', maxWidth: '100%' }}>
-                <img src="react.svg" alt="React Logo" style={{ height: window.innerWidth <= 768 ? '30px' : '60px', marginRight: '20px', verticalAlign: 'middle' }} />
+          <div ref={skillsRef} style={{ ...sectionStyle, marginTop: isMobile ? '30vw' : '500px', marginBottom: isMobile ? '24vw' : '400px' }}>
+            <h2 style={{ color: '#ffffff', fontSize: '8vw', margin: 0 }}>Skills</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? '4vw' : '10vw', flexWrap: 'wrap' }}>
+              <p style={{ fontSize: secondaryFontSize, maxWidth: '100%', margin: 0 }}>
+                <img src="react.svg" alt="React Logo" style={{ height: iconHeight, marginRight: iconMarginRight, verticalAlign: 'middle', maxWidth: '100%' }} />
                 React
               </p>
-              <p style={{ fontSize: window.innerWidth <= 768 ? '32px' : '80px', maxWidth: '100%' }}>
-                <img src="Laravel.svg" alt="Laravel Logo" style={{ height: window.innerWidth <= 768 ? '30px' : '60px', marginRight: '20px', verticalAlign: 'middle' }} />
+              <p style={{ fontSize: secondaryFontSize, maxWidth: '100%', margin: 0 }}>
+                <img src="Laravel.svg" alt="Laravel Logo" style={{ height: iconHeight, marginRight: iconMarginRight, verticalAlign: 'middle', maxWidth: '100%' }} />
                 Laravel
               </p>
-              <p style={{ fontSize: window.innerWidth <= 768 ? '32px' : '80px', maxWidth: '100%' }}>
-                <img src="PHP.svg" alt="PHP Logo" style={{ height: window.innerWidth <= 768 ? '30px' : '60px', marginRight: '20px', verticalAlign: 'middle' }} />
+              <p style={{ fontSize: secondaryFontSize, maxWidth: '100%', margin: 0 }}>
+                <img src="PHP.svg" alt="PHP Logo" style={{ height: iconHeight, marginRight: iconMarginRight, verticalAlign: 'middle', maxWidth: '100%' }} />
                 PHP
               </p>
-              <p style={{ fontSize: window.innerWidth <= 768 ? '32px' : '80px', maxWidth: '100%' }}>
-                <img src="MySQL.svg" alt="MySQL Logo" style={{ height: window.innerWidth <= 768 ? '30px' : '60px', marginRight: '20px', verticalAlign: 'middle' }} />
+              <p style={{ fontSize: secondaryFontSize, maxWidth: '100%', margin: 0 }}>
+                <img src="MySQL.svg" alt="MySQL Logo" style={{ height: iconHeight, marginRight: iconMarginRight, verticalAlign: 'middle', maxWidth: '100%' }} />
                 MySQL
               </p>
-              <p style={{ fontSize: window.innerWidth <= 768 ? '32px' : '80px', maxWidth: '100%' }}>
-                <img src="java.svg" alt="JavaScript Logo" style={{ height: window.innerWidth <= 768 ? '30px' : '60px', marginRight: '20px', verticalAlign: 'middle' }} />
+              <p style={{ fontSize: secondaryFontSize, maxWidth: '100%', margin: 0 }}>
+                <img src="java.svg" alt="JavaScript Logo" style={{ height: iconHeight, marginRight: iconMarginRight, verticalAlign: 'middle', maxWidth: '100%' }} />
                 JavaScript
               </p>
             </div>
@@ -205,24 +212,24 @@ function Header() {
         </section>
 
         <section>
-          <div ref={contactRef} style={sectionStyle} marginTop="px">
-            <h2 style={{ color: '#ffffff', fontSize: window.innerWidth <= 768 ? '80px' : '200px' }}>Contact</h2>
-            <p style={{ fontSize: window.innerWidth <= 768 ? '32px' : '80px' }}>
+          <div ref={contactRef} style={sectionStyle}>
+            <h2 style={{ color: '#ffffff', fontSize: baseFontSize, margin: 0 }}>Contact</h2>
+            <p style={{ fontSize: secondaryFontSize, margin: 0 }}>
               <a
                 href="https://wa.me/94711544875"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: '#fff', textDecoration: 'none' }}
               >
-                <SendIcon style={{ fontSize: window.innerWidth <= 768 ? '32px' : '80px', verticalAlign: 'middle' }} /> Whatsapp
+                <SendIcon style={{ fontSize: secondaryFontSize, verticalAlign: 'middle' }} /> Whatsapp
               </a>
             </p>
-            <p style={{ fontSize: window.innerWidth <= 768 ? '32px' : '80px' }}>
+            <p style={{ fontSize: secondaryFontSize, margin: 0 }}>
               <a
                 href="mailto:pramodxxpc@gmail.com"
                 style={{ color: '#fff', textDecoration: 'none' }}
               >
-                <EmailIcon style={{ fontSize: window.innerWidth <= 768 ? '32px' : '80px', verticalAlign: 'middle' }} /> Email \
+                <EmailIcon style={{ fontSize: secondaryFontSize, verticalAlign: 'middle' }} /> Email \
               </a>
             </p>
           </div>
