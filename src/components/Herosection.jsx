@@ -11,7 +11,7 @@ function Header() {
 
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
   const containerStyle = {
-    backgroundImage: `url(${import.meta.env.BASE_URL}mars.png)`,
+    backgroundImage: `url(${import.meta.env.BASE_URL}${isMobile ? 'mars-mobile.png' : 'mars.png'})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
