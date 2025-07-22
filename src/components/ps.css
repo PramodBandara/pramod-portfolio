@@ -1,0 +1,42 @@
+.ps img {
+  transition: transform 0.5s ease-in-out;
+  filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
+}
+
+@keyframes curveFloat {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.animated-wire {
+  animation: curveFloat 3s ease-in-out infinite;
+}
+.wire-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .wire-path {
+    fill: none;
+    stroke: cyan;
+    stroke-width: 2;
+    stroke-dasharray: 6;
+    stroke-dashoffset: 0;
+    animation: dash 2s linear infinite;
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -12;
+    }
+  }
