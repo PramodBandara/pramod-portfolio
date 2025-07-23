@@ -37,6 +37,10 @@ function Navbar() {
       }
       .github-icon {
         font-size: 28px !important;
+        right: 10px;
+      }
+      a[href*="github.com"] {
+        margin-right: -10px;
       }
     }
   `;
