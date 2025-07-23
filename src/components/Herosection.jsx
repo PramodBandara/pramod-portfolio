@@ -35,6 +35,13 @@ function Header() {
       onEnter: () => setBgImage(isMobile ? 'mars2-mobile.png' : 'mars2.png'),
       onLeaveBack: () => setBgImage(isMobile ? 'mars-mobile.png' : 'mars.png')
     });
+    // Change background to white.png after scrolling past the contact section
+    ScrollTrigger.create({
+      trigger: contactRef.current,
+      start: "bottom bottom",
+      onEnter: () => setBgImage("white.png"),
+      onLeaveBack: () => setBgImage(isMobile ? 'mars2-mobile.png' : 'mars2.png'),
+    });
   // Only run once on mount
   // eslint-disable-next-line
   }, []);
