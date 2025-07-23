@@ -66,7 +66,7 @@ function Navbar() {
             </span>
           ))}
         </div>
-        <div style={{ position: "absolute", right: "40px" }}>
+        <div style={{ position: "absolute", right: "0", top: "50%", transform: "translateY(-50%)" }}>
           <a href="https://github.com/PramodBandara" target="_blank" rel="noopener noreferrer" style={{ color: "#fff", fontSize: "35px" }}>
             <GitHubIcon fontSize="inherit" className="github-icon" />
           </a>
