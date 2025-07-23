@@ -98,6 +98,10 @@ export default theme;`}function d0(s={},...n){const{breakpoints:r,mixins:a={},sp
       }
       .github-icon {
         font-size: 28px !important;
+        right: 10px;
+      }
+      a[href*="github.com"] {
+        margin-right: -10px;
       }
     }
   `}),J.jsxs("nav",{style:{padding:"20px",background:"#000",color:"#fff",display:"flex",justifyContent:"center",alignItems:"center",position:"relative",flexDirection:"row",flexWrap:"wrap",gap:"20px"},children:[J.jsx("div",{style:{fontSize:"100px"},className:"audiowide-regular",children:"PramodBandara".split("").map((n,r)=>J.jsx("span",{className:"letter",style:{animationDelay:`${r*.05}s`},children:n},r))}),J.jsx("div",{style:{position:"absolute",right:"40px"},children:J.jsx("a",{href:"https://github.com/PramodBandara",target:"_blank",rel:"noopener noreferrer",style:{color:"#fff",fontSize:"35px"},children:J.jsx(Q3,{fontSize:"inherit",className:"github-icon"})})})]})]})}function Ya(s){if(s===void 0)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return s}function P_(s,n){s.prototype=Object.create(n.prototype),s.prototype.constructor=s,s.__proto__=n}/*!
