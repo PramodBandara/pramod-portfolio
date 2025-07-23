@@ -27,7 +27,7 @@ function Navbar() {
 
     @media (max-width: 768px) {
       .audiowide-regular {
-        font-size: 48px !important;
+        font-size: 32px !important;
         text-align: center;
       }
       nav {
@@ -56,7 +56,7 @@ function Navbar() {
         gap: "20px",
       }}>
         <div style={{ fontSize: "100px" }} className="audiowide-regular">
-          {"Pramod Bandara".split("").map((char, index) => (
+          {"PramodBandara".split("").map((char, index) => (
             <span key={index} className="letter" style={{ animationDelay: `${index * 0.05}s` }}>
               {char}
             </span>

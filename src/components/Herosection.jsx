@@ -8,6 +8,11 @@ function Header() {
   gsap.registerPlugin(ScrollTrigger);
 
   const [isProjectActive, setIsProjectActive] = useState(false);
+  const [bgImage, setBgImage] = useState(
+    window.matchMedia("(max-width: 768px)").matches
+      ? 'mars-mobile.png'
+      : 'mars.png'
+  );
 
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
   const backgroundLayerStyle = {
@@ -16,12 +21,23 @@ function Header() {
     left: 0,
     width: '100%',
     height: '100vh',
-    backgroundImage: `url(${import.meta.env.BASE_URL}${isMobile ? 'mars-mobile.png' : 'mars.png'})`,
+    backgroundImage: `url(${import.meta.env.BASE_URL}${bgImage})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     zIndex: -1
   };
+  useEffect(() => {
+    // Listen for scroll and update bgImage after aboutRef scrolls out of view (projectsRef enters)
+    ScrollTrigger.create({
+      trigger: projectsRef.current,
+      start: "top center",
+      onEnter: () => setBgImage(isMobile ? 'mars2-mobile.png' : 'mars2.png'),
+      onLeaveBack: () => setBgImage(isMobile ? 'mars-mobile.png' : 'mars.png')
+    });
+  // Only run once on mount
+  // eslint-disable-next-line
+  }, []);
   const containerStyle = {
     minHeight: '100vh',
     width: '100%',
